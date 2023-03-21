@@ -83,8 +83,16 @@ app.get('/cds-services', (request, response) => {
     description: 'Suggests prescribing Aspirin 81 MG Oral Tablets',
   };
 
+  // Service to predict missing codes
+  const missingCodeService = {
+    hook: 'patient-view',
+    id: 'missing-code',
+    title: 'Missing Code Prediction CDS Servicet',
+    description: "Suggests Diagnostic Codes which might be missing with a degree of confidence"
+  }
+
   const discoveryEndpointServices = {
-    services: [ patientViewExample, orderSelectExample ]
+    services: [ patientViewExample, orderSelectExample, missingCodeService ]
   };
   response.send(JSON.stringify(discoveryEndpointServices, null, 2));
 });
@@ -100,6 +108,7 @@ app.post('/cds-services/patient-view-example', (request, response) => {
 
   // Parse the request body for the Patient prefetch resource
   const patientResource = request.body.prefetch.requestedPatient;
+  console.log(patientResource);
   const patientViewCard = {
     cards: [
       {
@@ -121,6 +130,29 @@ app.post('/cds-services/patient-view-example', (request, response) => {
     ]
   };
   response.send(JSON.stringify(patientViewCard, null, 2));
+});
+
+app.post('/cds-services/missing-code', (request, response) => {
+
+  //Write code to get data from context..for now just get data from mongo??
+  let patientData;
+  fetch('./ActuallyPatient.json')
+  .then(response => response.json())
+  .then(data=> {
+    patientData = data;
+  })
+  .catch(error => {
+    console.log(error)
+  });
+  console.log(patientData.gender)
+
+  // Check if a medication was chosen by the provider to be ordered
+  if (['MedicationRequest', 'MedicationOrder'].includes(draftOrder.resourceType) && selections.includes(`${draftOrder.resourceType}/${draftOrder.id}`)
+    && draftOrder.medicationCodeableConcept) {
+    const responseCard = createMedicationResponseCard(draftOrder); // see function below for more details
+    response.send(JSON.stringify(responseCard, null, 2));
+  }
+  response.status(200);
 });
 
 /**
@@ -217,3 +249,22 @@ function createMedicationResponseCard(context) {
 
 // Here is where we define the port for the localhost server to setup
 app.listen(3000);
+
+//1. encounter_icustays
+// identified by "subject": {
+      //   "reference": "Patient/76202c51-1b9d-5cc2-a7bc-3dfb2ac3ab32"
+      // },
+
+//2. encounter
+// "subject": {
+//   "reference": "Patient/76202c51-1b9d-5cc2-a7bc-3dfb2ac3ab32"
+// },
+
+//3. observation_ce
+// to be downloaded
+
+//4. observation_le
+//everything has same retrieval
+
+//5. observation_oe
+

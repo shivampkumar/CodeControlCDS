@@ -1,0 +1,251 @@
+[
+    {
+        "resourceType": "Encounter",
+        "id": "4238a38e-3f01-58b1-b3f7-306b958412a2",
+        "meta": {
+            "versionId": "1",
+            "lastUpdated": "2022-05-24T17:02:00.722-04:00",
+            "source": "#f6rF8Vc1YFce07yI",
+            "profile": [
+                "http://fhir.mimic.mit.edu/StructureDefinition/mimic-encounter"
+            ]
+        },
+        "identifier": [
+            {
+                "use": "usual",
+                "system": "http://fhir.mimic.mit.edu/identifier/encounter",
+                "value": "21540783",
+                "assigner": {
+                    "reference": "Organization/ee172322-118b-5716-abbc-18e4c5437e15"
+                }
+            }
+        ],
+        "status": "finished",
+        "class": {
+            "system": "http://fhir.mimic.mit.edu/CodeSystem/admission-class",
+            "code": "ELECTIVE"
+        },
+        "type": [
+            {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "453701000124103",
+                        "display": "In-person encounter (procedure)"
+                    }
+                ]
+            }
+        ],
+        "serviceType": {
+            "coding": [
+                {
+                    "system": "http://fhir.mimic.mit.edu/CodeSystem/services",
+                    "code": "CSURG"
+                }
+            ]
+        },
+        "priority": {
+            "coding": [
+                {
+                    "system": "http://fhir.mimic.mit.edu/CodeSystem/admission-type",
+                    "code": "ELECTIVE"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/76202c51-1b9d-5cc2-a7bc-3dfb2ac3ab32"
+        },
+        "period": {
+            "start": "2118-10-08T14:00:00-04:00",
+            "end": "2118-10-11T20:15:00-04:00"
+        },
+        "hospitalization": {
+            "admitSource": {
+                "coding": [
+                    {
+                        "system": "http://fhir.mimic.mit.edu/CodeSystem/admit-source",
+                        "code": "PHYSICIAN REFERRAL"
+                    }
+                ]
+            },
+            "dischargeDisposition": {
+                "coding": [
+                    {
+                        "system": "http://fhir.mimic.mit.edu/CodeSystem/discharge-disposition",
+                        "code": "HOME"
+                    }
+                ]
+            }
+        },
+        "location": [
+            {
+                "location": {
+                    "reference": "Location/0c8de059-7250-5b94-b98d-0a079b28f06c"
+                },
+                "period": {
+                    "start": "2118-10-08T12:37:19-04:00",
+                    "end": "2118-10-09T15:11:32-04:00"
+                }
+            },
+            {
+                "location": {
+                    "reference": "Location/0c8de059-7250-5b94-b98d-0a079b28f06c"
+                },
+                "period": {
+                    "start": "2118-10-09T15:11:32-04:00",
+                    "end": "2118-10-11T20:19:01-04:00"
+                }
+            }
+        ],
+        "serviceProvider": {
+            "reference": "Organization/ee172322-118b-5716-abbc-18e4c5437e15"
+        }
+    },
+    {
+        "resourceType": "Encounter",
+        "id": "b0b7dcba-4148-5f45-8895-b202eebafe18",
+        "meta": {
+            "versionId": "1",
+            "lastUpdated": "2022-05-24T17:02:00.722-04:00",
+            "source": "#f6rF8Vc1YFce07yI",
+            "profile": [
+                "http://fhir.mimic.mit.edu/StructureDefinition/mimic-encounter"
+            ]
+        },
+        "identifier": [
+            {
+                "use": "usual",
+                "system": "http://fhir.mimic.mit.edu/identifier/encounter",
+                "value": "24997044",
+                "assigner": {
+                    "reference": "Organization/ee172322-118b-5716-abbc-18e4c5437e15"
+                }
+            }
+        ],
+        "status": "finished",
+        "class": {
+            "system": "http://fhir.mimic.mit.edu/CodeSystem/admission-class",
+            "code": "ELECTIVE"
+        },
+        "type": [
+            {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "453701000124103",
+                        "display": "In-person encounter (procedure)"
+                    }
+                ]
+            }
+        ],
+        "serviceType": {
+            "coding": [
+                {
+                    "system": "http://fhir.mimic.mit.edu/CodeSystem/services",
+                    "code": "CSURG"
+                }
+            ]
+        },
+        "priority": {
+            "coding": [
+                {
+                    "system": "http://fhir.mimic.mit.edu/CodeSystem/admission-type",
+                    "code": "ELECTIVE"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/76202c51-1b9d-5cc2-a7bc-3dfb2ac3ab32"
+        },
+        "period": {
+            "start": "2118-11-15T14:00:00-05:00",
+            "end": "2118-11-21T18:31:00-05:00"
+        },
+        "hospitalization": {
+            "admitSource": {
+                "coding": [
+                    {
+                        "system": "http://fhir.mimic.mit.edu/CodeSystem/admit-source",
+                        "code": "PHYSICIAN REFERRAL"
+                    }
+                ]
+            },
+            "dischargeDisposition": {
+                "coding": [
+                    {
+                        "system": "http://fhir.mimic.mit.edu/CodeSystem/discharge-disposition",
+                        "code": "HOME HEALTH CARE"
+                    }
+                ]
+            }
+        },
+        "location": [
+            {
+                "location": {
+                    "reference": "Location/0c8de059-7250-5b94-b98d-0a079b28f06c"
+                },
+                "period": {
+                    "start": "2118-11-15T14:47:26-05:00",
+                    "end": "2118-11-15T23:04:54-05:00"
+                }
+            },
+            {
+                "location": {
+                    "reference": "Location/25fdf8f3-5c5e-517b-b732-8f4501f25c33"
+                },
+                "period": {
+                    "start": "2118-11-15T23:04:54-05:00",
+                    "end": "2118-11-16T07:08:10-05:00"
+                }
+            },
+            {
+                "location": {
+                    "reference": "Location/d4b315bc-5e39-5162-9d5c-dada4294b1a9"
+                },
+                "period": {
+                    "start": "2118-11-16T07:08:10-05:00",
+                    "end": "2118-11-16T09:38:22-05:00"
+                }
+            },
+            {
+                "location": {
+                    "reference": "Location/7fabe959-1cae-5f68-a720-27c2975f8ec8"
+                },
+                "period": {
+                    "start": "2118-11-16T09:38:22-05:00",
+                    "end": "2118-11-17T18:09:08-05:00"
+                }
+            },
+            {
+                "location": {
+                    "reference": "Location/7fabe959-1cae-5f68-a720-27c2975f8ec8"
+                },
+                "period": {
+                    "start": "2118-11-17T18:09:08-05:00",
+                    "end": "2118-11-18T15:27:34-05:00"
+                }
+            },
+            {
+                "location": {
+                    "reference": "Location/7fabe959-1cae-5f68-a720-27c2975f8ec8"
+                },
+                "period": {
+                    "start": "2118-11-18T15:27:34-05:00",
+                    "end": "2118-11-19T20:34:51-05:00"
+                }
+            },
+            {
+                "location": {
+                    "reference": "Location/0c8de059-7250-5b94-b98d-0a079b28f06c"
+                },
+                "period": {
+                    "start": "2118-11-19T20:34:51-05:00",
+                    "end": "2118-11-21T18:31:06-05:00"
+                }
+            }
+        ],
+        "serviceProvider": {
+            "reference": "Organization/ee172322-118b-5716-abbc-18e4c5437e15"
+        }
+    }
+]
