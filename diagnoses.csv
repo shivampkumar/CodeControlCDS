@@ -1,0 +1,7 @@
+SUBJECT_ID,HADM_ID,SEQ_NUM,ICD9_CODE,SHORT_TITLE,LONG_TITLE,ICUSTAY_ID
+76202c51-1b9d-5cc2-a7bc-3dfb2ac3ab32,00000,1,3051,Tobacco use disorder,Tobacco use disorder,128841b3-93a7-5dd6-ab97-bc994df7a8c6
+76202c51-1b9d-5cc2-a7bc-3dfb2ac3ab32,00000,2,71590,"Osteoarthrosis, unspecified whether generalized or localized, site unspecified","Osteoarthrosis, unspecified whether generalized or localized, site unspecified",128841b3-93a7-5dd6-ab97-bc994df7a8c6
+76202c51-1b9d-5cc2-a7bc-3dfb2ac3ab32,00000,3,4019,Unspecified essential hypertension,Unspecified essential hypertension,128841b3-93a7-5dd6-ab97-bc994df7a8c6
+76202c51-1b9d-5cc2-a7bc-3dfb2ac3ab32,00000,4,4271,Paroxysmal ventricular tachycardia,Paroxysmal ventricular tachycardia,128841b3-93a7-5dd6-ab97-bc994df7a8c6
+76202c51-1b9d-5cc2-a7bc-3dfb2ac3ab32,00000,5,42731,Atrial fibrillation,Atrial fibrillation,128841b3-93a7-5dd6-ab97-bc994df7a8c6
+76202c51-1b9d-5cc2-a7bc-3dfb2ac3ab32,00000,6,4241,Aortic valve disorders,Aortic valve disorders,128841b3-93a7-5dd6-ab97-bc994df7a8c6
