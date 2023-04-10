@@ -109,42 +109,78 @@ app.post('/cds-services/patient-view-example', (request, response) => {
   // Parse the request body for the Patient prefetch resource
   const patientResource = request.body.prefetch.requestedPatient;
   console.log(patientResource);
-  const patientViewCard = {
+  //let newMedicationRequest = context;
+  const conditionCodeCard = {
     cards: [
       {
-        // Use the patient's First and Last name
-        summary: 'Now seeing: ' + patientResource.name[0].given[0] + ' ' + patientResource.name[0].family[0],
-        indicator: 'info',
-        source: {
-          label: 'CDS Service Tutorial',
-          url: 'https://github.com/cerner/cds-services-tutorial/wiki/Patient-View-Service'
-        },
-        links: [
+        summary: 'Following codes are recommended for Patient: 76202c51-1b9d-5cc2-a7bc-3dfb2ac3ab32 after CodeControl',
+        indicator: 'warning',
+        suggestions: [
           {
-            label: 'Learn more about CDS Hooks',
-            url: 'https://cds-hooks.org',
-            type: 'absolute'
+            label: 'Add Code: 4271 (Paroxysmal ventricular tachycardia)',
+            actions: [
+              {
+                type: 'create',
+                description: 'Adding Code: 4271 (Paroxysmal ventricular tachycardia) to patient Condition', 
+                resource: "None"
+              }
+            ]
+          },
+          {
+            label: 'Add Code: 4241 (Aortic valve disorders)',
+            actions: [
+              {
+                type: 'create',
+                description: 'Adding Code: 4241 (Aortic valve disorders', 
+                resource: "newMedicationRequest"
+              }
+            ]
           }
-        ]
+        ],
+        source: {
+          label: 'CodeControl',
+          url: 'https://github.com/cerner/cds-services-tutorial/wiki/Order-Select-Service'
+        }
       }
     ]
-  };
-  response.send(JSON.stringify(patientViewCard, null, 2));
-});
+  }
+//   const patientViewCard = {
+//     cards: [
+//       {
+//         // Use the patient's First and Last name
+//         summary: 'Now seeing: ' + patientResource.name[0].given[0] + ' ' + patientResource.name[0].family[0],
+//         indicator: 'info',
+//         source: {
+//           label: 'CDS Service Tutorial',
+//           url: 'https://github.com/cerner/cds-services-tutorial/wiki/Patient-View-Service'
+//         },
+//         links: [
+//           {
+//             label: 'Learn more about CDS Hooks',
+//             url: 'https://cds-hooks.org',
+//             type: 'absolute'
+//           }
+//         ]
+//       }
+//     ]
+//   };
+  response.send(JSON.stringify(conditionCodeCard, null, 2));
+ });
+
 
 app.post('/cds-services/missing-code', (request, response) => {
 
   //Write code to get data from context..for now just get data from mongo??
-  let patientData;
-  fetch('./ActuallyPatient.json')
-  .then(response => response.json())
-  .then(data=> {
-    patientData = data;
-  })
-  .catch(error => {
-    console.log(error)
-  });
-  console.log(patientData.gender)
+  // let patientData;
+  // fetch('./ActuallyPatient.json')
+  // .then(response => response.json())
+  // .then(data=> {
+  //   patientData = data;
+  // })
+  // .catch(error => {
+  //   console.log(error)
+  // });
+  // console.log(patientData.gender)
 
   // Check if a medication was chosen by the provider to be ordered
   if (['MedicationRequest', 'MedicationOrder'].includes(draftOrder.resourceType) && selections.includes(`${draftOrder.resourceType}/${draftOrder.id}`)
